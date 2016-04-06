@@ -29,6 +29,6 @@ describe('Statement', function(){
 	it('can filter statement by deposits only', function(){
 		statement.addDeposit(2000, "10-01-2012", 2000)
 		statement.addWithdrawal(500, "14-01-2012", 1500)
-    expect(statement.printStatement()).toEqual (depositsOnly)				
+    expect(statement.printDepositsStatement()).toEqual (depositsOnly)				
 	})
 })
