@@ -1,11 +1,9 @@
-'use strict';
-
-  describe('BankAccount', function(){
+describe('Account', function(){
 
   var account;
 
   beforeEach(function(){
-    account = new BankAccount();
+    account = new Account();
   })
 
   it('starts with a balance of 0', function(){
@@ -22,11 +20,5 @@
   	account.withdraw(500, "14-01-2012")
   	expect(account.currentBalance()).toEqual(1500)  	
   })
-
-  it('will store the deposit and the date as an object in an array', function(){
-  	account.deposit(2000, "10-01-2012")
-  	expect(account.statement()).toEqual([{ date: "10-01-2012", credit: 2000}])
-  })
-
 
 })
