@@ -11,13 +11,25 @@ Statement.prototype.addDeposit = function(amount, date, balance) {
 Statement.prototype.addWithdrawal = function(amount, date, balance) {
 	this.show.push({ date: date, credit: "", debit: amount, balance: balance })
 };
+
 Statement.prototype.printStatement = function(){
   return this.print(this.show);
+}
+
+Statement.prototype.printDateDescendingStatement = function(){
+  return this.print(this.show.reverse());
 }
 
 Statement.prototype.printDepositsStatement = function(){
   var filtered_array = this.show.filter(function(transaction){
     return transaction.debit == ""
+  })
+  return this.print(filtered_array);
+}
+
+Statement.prototype.printWithdrawalsStatement = function(){
+  var filtered_array = this.show.filter(function(transaction){
+    return transaction.credit == ""
   })
   return this.print(filtered_array);
 }

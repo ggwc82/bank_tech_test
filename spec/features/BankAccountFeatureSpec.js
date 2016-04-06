@@ -11,7 +11,7 @@
     account.withdraw(500, "14-01-2012")
   })
 
-  it('a deposit and withdrawal will be stored as objects with updated balances', function(){
+  it('a deposit and withdrawal will be stored as object literals with updated balances', function(){
   	expect(account.returnStatement()).toEqual([{ date: "10-01-2012", credit: 2000, debit: "", balance: 2000}, { date: "14-01-2012", credit: "", debit: 500, balance: 1500 }])
   })
 

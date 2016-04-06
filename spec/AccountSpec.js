@@ -22,6 +22,4 @@ describe('Account', function(){
   	account.withdraw(500, "14-01-2012")
   	expect(account.currentBalance()).toEqual(1500)  	
   })
-
-
 })
