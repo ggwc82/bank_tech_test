@@ -20,7 +20,6 @@ Account.prototype.withdraw = function(amount, date) {
 }
 
 Account.prototype.returnStatement = function() {
-	console.log(this.statement.show)
 	return this.statement.show
 };
 
