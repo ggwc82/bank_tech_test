@@ -11,15 +11,16 @@ Account.prototype.currentBalance = function() {
 
 Account.prototype.deposit = function(amount, date) {
 	this.balance += amount;
-	this.statement.addDeposit(amount, date, this.balance)
+	this.statement.show.push(new Deposit(amount, date, this.balance))
 }
 
 Account.prototype.withdraw = function(amount, date) {
 	this.balance -= amount;
-	this.statement.addWithdrawal(amount, date, this.balance)
+	this.statement.show.push(new Withdrawal(amount, date, this.balance))
 }
 
 Account.prototype.returnStatement = function() {
+	console.log(this.statement.show)
 	return this.statement.show
 };
 

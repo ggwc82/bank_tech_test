@@ -12,10 +12,11 @@
   })
 
   it('a deposit and withdrawal will be stored as objects with updated balances', function(){
-  	expect(account.returnStatement()).toEqual([{ date: "10-01-2012", credit: 2000, debit: "", balance: 2000}, { date: "14-01-2012", credit: "", debit: 500, balance: 1500 }])
+  	expect(account.returnStatement()[0]).toEqual(jasmine.any(Deposit))
+    expect(account.returnStatement()[1]).toEqual(jasmine.any(Withdrawal))
   })
 
   it('can print the statement', function(){
-    expect(account.printStatement()).toEqual (output)
+    expect(account.printStatement()).toEqual(output)
   })
 })
