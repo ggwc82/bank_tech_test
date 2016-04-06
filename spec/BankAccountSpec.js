@@ -17,4 +17,10 @@
   	expect(account.currentBalance()).toEqual(2000)
   })
 
+  it('can allow a withdrawal and update the balance', function(){
+  	account.deposit(2000)
+  	account.withdraw(500)
+  	expect(account.currentBalance()).toEqual(1500)  	
+  })
+
 })
