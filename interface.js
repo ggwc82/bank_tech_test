@@ -4,6 +4,16 @@ $(document).ready(function() {
 
 
   function updateBalance(){
-    $('#balance').text(account.balance);
+    $('#balance').empty();
+    $('#balance').text(account.currentBalance());
   };
+
+  $("#update").click(function(e) {
+    e.preventDefault()
+    var date = $('#date').val();
+    var deposit1 = $('#deposit').val();
+    account.deposit(deposit1, date);
+    updateBalance();
+  });
 })
+

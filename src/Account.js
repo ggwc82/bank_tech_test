@@ -26,3 +26,7 @@ Account.prototype.returnStatement = function() {
 Account.prototype.printStatement = function(){
 	return this.statement.printStatement();
 }
+
+Account.prototype.currentBalance = function(){
+	return this.balance;
+}
