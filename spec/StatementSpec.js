@@ -12,14 +12,9 @@ describe('Statement', function(){
 		expect(statement.show).toEqual ([])
 	})
 
-	it('stores a deposit with the date as an object', function(){
-		statement.addDeposit(2000, "10-01-2012")
-		expect(statement.show[0]).toEqual ({date: "10-01-2012", credit: 2000})
-	})
-
-	it('stores a deposit and withdrawal', function(){
-		statement.addDeposit(2000, "10-01-2012")
-		statement.addWithdrawal(500, "14-01-2012")
-		expect(statement.show).toEqual ([{date: "10-01-2012", credit: 2000}, {date: "14-01-2012", debit: 500}])
+	it('stores deposits and withdrawls with date and updated balances', function(){
+		statement.addDeposit(2000, "10-01-2012", 2000)
+		statement.addWithdrawal(500, "14-01-2012", 1500)
+		expect(statement.show).toEqual ([{date: "10-01-2012", credit: 2000, balance: 2000}, {date: "14-01-2012", debit: 500, balance: 1500}])
 	})
 })

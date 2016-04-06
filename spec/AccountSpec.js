@@ -5,7 +5,7 @@ describe('Account', function(){
 
   beforeEach(function(){
     statement = [];
-    account = new Account(statement);
+    account = new Account();
   })
 
   it('starts with a balance of 0', function(){
