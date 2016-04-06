@@ -2,8 +2,7 @@
 
 function Account() {
 	this.balance = 0;
-	this.date;
-	this.deposit;
+	this.statement = new Statement();
 }
 
 Account.prototype.currentBalance = function() {		
@@ -11,15 +10,15 @@ Account.prototype.currentBalance = function() {
 };
 
 Account.prototype.deposit = function(amount, date) {
-	this.date = date;
-	this.deposit = amount;
+	this.statement.addDeposit(amount, date)
 	this.balance += amount;
 }
 
 Account.prototype.withdraw = function(amount, date) {
+	this.statement.addWithdrawal(amount, date)
 	this.balance -= amount;
 }
 
-Account.prototype.statement = function() {
-	return [{ date: this.date, credit: this.deposit }]
+Account.prototype.returnStatement = function() {
+	return this.statement.show
 };

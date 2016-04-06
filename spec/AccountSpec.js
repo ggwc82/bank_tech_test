@@ -1,9 +1,11 @@
 describe('Account', function(){
 
   var account;
+  var statement;
 
   beforeEach(function(){
-    account = new Account();
+    statement = [];
+    account = new Account(statement);
   })
 
   it('starts with a balance of 0', function(){
