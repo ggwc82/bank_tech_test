@@ -24,3 +24,14 @@ Account.prototype.withdraw = function(amount, date) {
 Account.prototype.returnStatement = function() {
 	return this.statement.show
 };
+
+Account.prototype.printStatement = function(){
+	var output = "date || credit || debit || balance\n"
+	this.statement.show.reverse().forEach(function(transaction){
+		output += transaction.date + " || " 
+		+ transaction.credit.toString() + " || "
+		+ transaction.debit.toString() + " || "
+		+ transaction.balance.toString() + "\n"
+	})
+	return output
+}
